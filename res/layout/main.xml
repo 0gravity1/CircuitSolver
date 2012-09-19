@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent"        
+        android:orientation="vertical"
+        android:id="@+id/main">
+        
+    <LinearLayout 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content" 
+        android:layout_height="fill_parent"        
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:background="#1500ffff"
+        android:id="@+id/llRightside">
+        
+        <ImageButton
+			android:id="@+id/ibResistor"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#00000000"
+			android:onClick="bAddResistor"
+			android:src="@drawable/symbol_resistor" />
+        
+        <ImageButton
+			android:id="@+id/ibDelete"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#00000000"
+			android:onClick="bRemoveResistor"
+			android:src="@drawable/symbol_delete" />
+        
+        <ImageButton
+			android:id="@+id/ibRotate"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#00000000"
+			android:onClick="bRotate"
+			android:src="@drawable/symbol_rotate" />
+        
+        <TextView 
+        	android:id="@+id/bNumberOfResistors"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center"        	        
+        	android:textSize="35dp"
+        	android:text="0" />
+        
+        
+    </LinearLayout>
+    
+    <com.Circuit.test.MainLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/elementContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toLeftOf="@id/llRightside"
+        android:background="#00000000" />
+
+</RelativeLayout>
