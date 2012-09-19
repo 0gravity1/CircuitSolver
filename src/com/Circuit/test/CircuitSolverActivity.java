@@ -119,6 +119,8 @@ public class CircuitSolverActivity extends Activity {
 	
 	public int checkSnap(View v){
 		
+		//A resistor orientation of '0' means that the resistor is vertical.
+		//A resistor orientation of '1' means that the resistor is horizontal. 
 		//The view that was dropped.
 		mResistor = (ResistorView) v;
 		//Log.d("checkSnap", "Inside, mElements size is " + Global.mElements.size());
