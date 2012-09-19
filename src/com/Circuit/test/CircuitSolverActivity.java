@@ -163,8 +163,28 @@ public class CircuitSolverActivity extends Activity {
 				//Check if Node 1 of the dropped view is close to the Node 2 of the temporary view.
 				if ((Math.abs(mResistorTemp.node2.x - mResistor.node1.x) <= 30) && (Math.abs(mResistorTemp.node2.y - mResistor.node1.y) <= 30)){
 				
-					mResistor.node1.x = mResistorTemp.node2.x;
-					mResistor.node1.y = mResistorTemp.node2.y;
+					RelativeLayout.LayoutParams mResistorDroppedParams = (RelativeLayout.LayoutParams) mResistor.getLayoutParams();
+					RelativeLayout.LayoutParams mResistorTempParams = (RelativeLayout.LayoutParams) mResistorTemp.getLayoutParams();
+
+					if ((mResistor.resistorOrientation == 0 && mResistorTemp.resistorOrientation == 0) || (mResistor.resistorOrientation == 1 && mResistorTemp.resistorOrientation == 1)){
+						
+						mResistorDroppedParams.leftMargin = mResistorTempParams.leftMargin;
+						mResistorDroppedParams.topMargin = mResistorTempParams.topMargin;
+					} 
+					
+					if (mResistor.resistorOrientation == 0 && mResistorTemp.resistorOrientation == 1){
+						
+						mResistorDroppedParams.leftMargin = (mResistorTempParams.leftMargin + 200) - (int)(10 * Global.mScaleFactor);
+						mResistorDroppedParams.topMargin = mResistorTempParams.topMargin + (int)(10 * Global.mScaleFactor);
+					}
+					
+					if (mResistor.resistorOrientation == 1 && mResistorTemp.resistorOrientation == 0){
+						
+						mResistorDroppedParams.leftMargin = mResistorTempParams.leftMargin + (int)(10 * Global.mScaleFactor);
+						mResistorDroppedParams.topMargin = (mResistorTempParams.topMargin + 200) - (int)(10 * Global.mScaleFactor);
+					}
+					
+					mResistor.setLayoutParams(mResistorDroppedParams);
 					
 					return 2;
 				}
@@ -194,6 +214,7 @@ public class CircuitSolverActivity extends Activity {
 		return 0;
 	}
 	
+	//Not used for anything right now.
 	public void updateWhenZooming(){
 		
 		View tempView;
