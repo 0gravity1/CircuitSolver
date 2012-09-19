@@ -1,7 +1,6 @@
 package com.Circuit.test;
 
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -207,18 +206,3 @@ public class CircuitSolverActivity extends Activity {
 	}
 	
 }
-
-
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
