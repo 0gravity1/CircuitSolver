@@ -329,6 +329,7 @@ public class ResistorView extends View implements OnTouchListener{
 		if((resistorOrientation == 0)){
 			
 			resistorOrientation = 1;
+			invalidate();
 			/*this.startAnimation(ccw);
 	
 			
@@ -340,6 +341,7 @@ public class ResistorView extends View implements OnTouchListener{
 		}else if ((resistorOrientation == 1)){
 			
 			resistorOrientation = 0; 
+			invalidate();
 			/*this.startAnimation(cw);
 			if (cw.hasEnded()){
 				cw.cancel();
