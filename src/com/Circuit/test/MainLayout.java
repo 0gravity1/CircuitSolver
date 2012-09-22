@@ -129,7 +129,7 @@ public class MainLayout extends RelativeLayout {
 		detector.onTouchEvent(event);
 		
 		if (mode == ZOOM) {			
-        	
+        	        //Redraw the view when we are zooming. 
 			invalidate();
 		}
 			
