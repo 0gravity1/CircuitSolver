@@ -130,7 +130,7 @@ public class MainLayout extends RelativeLayout {
 		
 		if (mode == ZOOM) {			
         	
-			//invalidate();
+			invalidate();
 		}
 			
 		return true;
